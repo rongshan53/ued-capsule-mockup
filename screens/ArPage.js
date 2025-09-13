@@ -45,20 +45,34 @@ const ArScreen = ({ navigation }) => {
           />
         </View>
 
-        <Image source={AR_BG}
-        style={[{
-          maxHeight: "100%", 
-          aspectRatio: ASPECTT, 
-          elevation: 15,
-          zIndex: 1,
-          },]}
-        resizeMode="contain"
-        />
+        <Image
+  source={AR_BG}
+  style={{
+    maxHeight: "100%",
+    aspectRatio: ASPECTT,
+    // elevation: 15,  // <-- remove or lower this
+    zIndex: 1,
+  }}
+  resizeMode="contain"
+/>
 
         <View style={styles.circle}>
           <Image source={require("../assets/gallery icon.png")} style={{width: 22, height: 22}} />
         </View>
 
+        <Image
+  source={require("../assets/scanner asset.png")}
+  style={{
+    width: 108,
+    aspectRatio: 1,
+    position: "absolute",
+    right: 24,
+    top: 120,
+    zIndex: 5,        // higher than BG
+    elevation: 20,    // IMPORTANT on Android
+  }}
+  resizeMode="contain"
+/>
       </View>
 
   </View>

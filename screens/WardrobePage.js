@@ -49,14 +49,14 @@ export default function WardrobeScreen({ navigation }) {
   return (
     <View style={styles.screen}>
       {/* Background reference image */}
-      <View style={styles.reference}>
+      {/* <View style={styles.reference}>
         <Image
           source={REF_IMG}
           style={{ maxHeight: "100%", aspectRatio: ASPECT }}
           resizeMode="contain"
           opacity={0.2}
         />
-      </View>
+      </View> */}
 
       <View style={styles.container}>
         <View style={styles.weatherBar}>
@@ -246,6 +246,7 @@ const styles = StyleSheet.create({
   screen: { 
     flex: 1,
     position: "relative",
+    backgroundColor: "#D3CFC0",
   },
 
   reference: {

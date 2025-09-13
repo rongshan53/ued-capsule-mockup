@@ -1,11 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import StylingDetailMy1Page from "./StylingDetailMy1Page";
 
 
-const REF_IMG = require("../assets/styling result reference.png");
+const REF_IMG = require("../assets/styling detail my 2.png");
 
-const StylingDetailMy2Page = ({ navigation }) => {
+const ProfileScreen = ({ navigation }) => {
   const { width: refW, height: refH } = Image.resolveAssetSource(REF_IMG);
   const ASPECT = refW / refH; // width / height
 
@@ -18,11 +17,11 @@ const StylingDetailMy2Page = ({ navigation }) => {
                     aspectRatio: ASPECT, 
                   },]}
                 resizeMode="contain"        
-                opacity={0.5}
+                
               />
       </View>
 
-      <Text>2222</Text>
+
 
       
     </View>
@@ -31,7 +30,8 @@ const StylingDetailMy2Page = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   screen: { 
-    flex: 1
+    flex: 1,
+    backgroundColor: "#D3CFC0",
   },
 
   reference: {
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
   
 });
 
-export default StylingDetailMy2Page;
+export default ProfileScreen;

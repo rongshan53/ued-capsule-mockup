@@ -11,10 +11,10 @@ import {
   FlatList,
   Modal,
 } from "react-native";
-import { Button } from 'react-native-paper';
+import { Button, Snackbar, Portal, Provider } from 'react-native-paper';
 
 
-const REF_IMG = require("../assets/styling detail my 1 reference.png");
+const REF_IMG = require("../assets/styling detail my 1 reference 2.png");
 const UP_IMG = require("../assets/my 1 up photo.png"); // overlay image
 
 const INDIVIDUAL = [
@@ -28,6 +28,8 @@ const INDIVIDUAL = [
 export default function StylingDetailMy1Page({ navigation }) {
   const { width: screenW } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const [toastVisible, setToastVisible] = useState(false);
 
   // background reference image sizing
   const { width: refW, height: refH } = Image.resolveAssetSource(REF_IMG);
@@ -44,8 +46,8 @@ export default function StylingDetailMy1Page({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         {/* Wrapper sized exactly to the background image */}
-        <View style={{ width: screenW, height: refHDisplay }}>
-          {/* Background image (last layer) */}
+        <View style={{ width: screenW, height: 1028 }}>
+          {/* Background image (last layer)
           <Image
             source={REF_IMG}
             style={{
@@ -58,7 +60,7 @@ export default function StylingDetailMy1Page({ navigation }) {
             }}
             resizeMode="contain"
             pointerEvents="none"
-          />
+          /> */}
 
           {/* Overlay UI */}
           <Image
@@ -71,6 +73,13 @@ export default function StylingDetailMy1Page({ navigation }) {
             }}
             resizeMode="contain"
           />
+          <View style={{position:"absolute", top:54, left:24}}>
+            <Pressable onPress={() => navigation.navigate("StylingResultPage")}>
+              <Image source={require("../assets/arrow.png")} style={{width: 18, height: 18}} />
+            </Pressable>
+          </View>
+
+          <Image source={require("../assets/label icon.png")} style={{width: 32, height: 32, top:132, right:14, position:"absolute"}} />
 
           <View style={styles.three}>
             <View style={styles.two}>
@@ -215,49 +224,34 @@ export default function StylingDetailMy1Page({ navigation }) {
                 </View>
               </View>
 
-              {/* Wear Button with Modal */}
-              {/* Wear Button with Modal */}
-<View>
-  <Pressable
-    style={styles.wearButton}
-    onPress={() => {
-      setModalVisible(true);
-      // Automatically close the modal after 3 seconds
-      setTimeout(() => {
-        setModalVisible(false);
-      }, 2000);
-    }}
-  >
-    <Text style={styles.wearText}>Wear</Text>
-    </Pressable>
-
-    <Modal
-      animationType="fade"
-      transparent={true}
-      visible={modalVisible}
-      onRequestClose={() => setModalVisible(false)} // Android back button
-    >
-      <View style={styles.overlay}>
-        <View style={styles.modalContent}>
-          <Text style={{ fontSize: 18 }}>
-            Marked as washed successfully!
-          </Text>
-        </View>
-      </View>
-    </Modal>
-  </View>
-
+            <Pressable
+              style={styles.wearButton}
+              onPress={() => {
+                setToastVisible(true);
+                setTimeout(() => setToastVisible(false), 2000);
+              }}
+            >
+              <Text style={styles.wearText}>Wear</Text>
+            </Pressable>
+            
             </View>
           </View>
         </View>
       </ScrollView>
+      {toastVisible && (
+        <View pointerEvents="none" style={styles.toastWrap}>
+          <View style={styles.toastCard}>
+            <Text style={{ color: '#7D7700', fontSize:18, lineHeight: 28 }}>Marked as washed successfully!</Text>
+          </View>
+        </View>
+      )}
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: "#FFFBF5" },
-  scrollContent: { backgroundColor: "#FFFBF5" },
+  root: { flex: 1, backgroundColor: "#D3CFC0" },
+  scrollContent: { backgroundColor: "#D3CFC0" },
 
   ModeBoxes: {
     width: 95,
@@ -373,7 +367,7 @@ const styles = StyleSheet.create({
   },
 
   boxes: {
-    width: 335,
+    width: 340,
     height: 125,
     borderWidth: 1,
     borderRadius: 12,
@@ -425,4 +419,23 @@ wearText: {
   color: "#7D7700",
   lineHeight: 24,
 },
-});
+
+toastWrap: {
+  position: 'absolute',
+  bottom: 400,
+  left:19,
+},
+
+toastCard: {
+  width: 318,
+  height: 93,
+  borderRadius: 6,
+  backgroundColor: '#FFFBF5',
+  elevation: 4.5,
+  alignItems: 'center',
+  justifyContent:"center"
+},
+
+
+},
+);

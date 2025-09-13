@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.reference}>
+      {/* <View style={styles.reference}>
         <Image source={REF_IMG}
           style={[{
             maxHeight: "100%", 
@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
           resizeMode="contain"        
           opacity={0.5}
         />
-      </View>
+      </View> */}
 
       <View style={styles.CONTENT}>
         <View style={styles.top}>
@@ -133,6 +133,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "#D3CFC0",
   },
 
   reference: {

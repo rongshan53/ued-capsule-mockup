@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 
 
-const REF_IMG = require("../assets/styling result reference.png");
+const REF_IMG = require("../assets/profile reference.png");
 
 const ProfileScreen = ({ navigation }) => {
   const { width: refW, height: refH } = Image.resolveAssetSource(REF_IMG);
@@ -17,7 +17,7 @@ const ProfileScreen = ({ navigation }) => {
                     aspectRatio: ASPECT, 
                   },]}
                 resizeMode="contain"        
-                opacity={0.5}
+                
               />
       </View>
 
@@ -30,7 +30,8 @@ const ProfileScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   screen: { 
-    flex: 1
+    flex: 1,
+    backgroundColor: "#D3CFC0",
   },
 
   reference: {

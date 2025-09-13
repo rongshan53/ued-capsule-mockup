@@ -6,6 +6,7 @@ import loadResourcesAsync from "./utils/loadResourcesAsync";
 import { useEffect } from "react";
 import { useFonts,PlayfairDisplay_400Regular,} from "@expo-google-fonts/playfair-display";
 import AppNavigator from "./navigation/tab";
+import { PaperProvider } from 'react-native-paper';
 // import { Provider as PaperProvider } from 'react-native-paper';
 // import WardrobeScreen from './screens/WardrobePage';
 
@@ -42,6 +43,7 @@ export default function App() {
       {/* <PaperProvider>
         <WardrobeScreen />
       </PaperProvider> */}
+      
     </NavigationContainer>
   );
 

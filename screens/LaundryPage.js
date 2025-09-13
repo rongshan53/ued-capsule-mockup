@@ -14,7 +14,7 @@ export default function LaundryScreen() {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.reference}>
+      {/* <View style={styles.reference}>
         <Image source={REF_IMG}
           style={[{
               maxHeight: "100%", 
@@ -23,7 +23,7 @@ export default function LaundryScreen() {
           resizeMode="contain"        // no crop; use "cover" if you want crop
           opacity={0.5}
         />
-      </View>
+      </View> */}
 
       {/* Foreground content (unaffected by the background) */}
       <View style={styles.container}>
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     position: "relative",
-    // backgroundColor: "#D3CFC0"
+    backgroundColor: "#D3CFC0",
   },
 
   // Full-screen layer for background placement

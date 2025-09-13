@@ -63,7 +63,7 @@ export default function Tabs() {
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: "rgba(255, 251, 245, 0.5)",
+          backgroundColor: "rgba(255, 251, 245,1)",
           width: "94%",
           height: 51,
           borderRadius: 10,
@@ -81,13 +81,20 @@ export default function Tabs() {
         name="HomePage"
         component={HomeStackScreen}
         options={{
-          tabBarIcon: ({ color, focused }) => (
-            <View
-              style={[
-                styles.iconContainer,
-                focused && { backgroundColor: "#fffff" },
-              ]}>
-            <Image source={require("../assets/homeIcon.png")} style={{ width: 28, height: 28, marginTop: 11 }} />
+          tabBarIcon: ({focused }) => (
+            <View style={styles.iconContainer}>
+              <Image 
+                source={
+                  focused 
+                    ? require("../assets/homeIcon selected.png")
+                    : require("../assets/homeIcon.png")
+                }
+                style={{
+                  width: focused ? 52 : 28,   // normal slightly bigger
+                  height: focused ? 52 : 28,
+                  marginTop: 11,
+                }} 
+              />
             </View>
             ),
         }}
@@ -96,14 +103,20 @@ export default function Tabs() {
         name="WardrobePage"
         component={WardrobeStackScreen}
         options={{
-          tabBarIcon: ({ color, focused }) => (
-            <View
-              style={[
-                styles.iconContainer,
-                focused && { backgroundColor: "#fffff" },
-              ]}
-            >
-            <Image source={require("../assets/wardrobeIcon.png")} style={{ width: 25, height: 25, marginTop: 11 }} />
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.iconContainer}>
+              <Image 
+                source={
+                  focused 
+                    ? require("../assets/wardrobeIcon selected.png")
+                    : require("../assets/wardrobeIcon.png")
+                }
+                style={{
+                  width: focused ? 52 : 28,   // normal slightly bigger
+                  height: focused ? 52 : 28,
+                  marginTop: 11,
+                }} 
+              />
             </View>
           ),
         }}
@@ -112,14 +125,20 @@ export default function Tabs() {
         name="ArPage"
         component={ArPage}
         options={{
-          tabBarIcon: ({ color, focused }) => (
-            <View
-              style={[
-                styles.iconContainer,
-                focused && { backgroundColor: "#fffff" },
-              ]}
-            >
-              <Image source={require("../assets/arIcon.png")} style={{ width: 27, height: 27, marginTop: 11 }} />
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.iconContainer}>
+              <Image 
+                source={
+                  focused 
+                    ? require("../assets/arIcon selected.png")
+                    : require("../assets/arIcon.png")
+                }
+                style={{
+                  width: focused ? 52 : 28,   // normal slightly bigger
+                  height: focused ? 52 : 28,
+                  marginTop: 11,
+                }} 
+              />
             </View>
           ),
         }}
@@ -128,14 +147,20 @@ export default function Tabs() {
         name="LaundryPage"
         component={LaundryPage}
         options={{
-          tabBarIcon: ({ color, focused }) => (
-            <View
-              style={[
-                styles.iconContainer,
-                focused && { backgroundColor: "#fffff" },
-              ]}
-            >
-            <Image source={require("../assets/laundryIcon.png")} style={{ width: 24, height: 24, marginTop: 11 }} />
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.iconContainer}>
+              <Image 
+                source={
+                  focused 
+                    ? require("../assets/laundryIcon selected.png")
+                    : require("../assets/laundryIcon.png")
+                }
+                style={{
+                  width: focused ? 52 : 28,   // normal slightly bigger
+                  height: focused ? 52 : 28,
+                  marginTop: 11,
+                }} 
+              />
             </View>
           ),
         }}
@@ -144,14 +169,20 @@ export default function Tabs() {
         name="ProfilePage"
         component={ProfilePage}
         options={{
-          tabBarIcon: ({ color, focused }) => (
-            <View
-              style={[
-                styles.iconContainer,
-                focused && { backgroundColor: "#fffff" },
-              ]}
-            >
-            <Image source={require("../assets/profileIcon.png")} style={{ width: 25, height: 25, marginTop: 11 }} />
+          tabBarIcon: ({ focused }) => (
+            <View style={styles.iconContainer}>
+              <Image 
+                source={
+                  focused 
+                    ? require("../assets/profileIcon selected.png")
+                    : require("../assets/profileIcon.png")
+                }
+                style={{
+                  width: focused ? 52 : 28,   // normal slightly bigger
+                  height: focused ? 52 : 28,
+                  marginTop: 11,
+                }} 
+              />
             </View>
           ),
         }}

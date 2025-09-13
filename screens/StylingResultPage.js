@@ -174,14 +174,14 @@ export default function StylingResultScreen({ navigation }) {
     <GestureHandlerRootView style={{ flex: 1 }}>
 
     <View style={styles.screen}>
-            <View style={styles.reference}>
+            {/* <View style={styles.reference}>
               <Image
                 source={REF_IMG}
                 style={[{ maxHeight: "100%", aspectRatio: ASPECT }]}
                 resizeMode="contain"
                 opacity={0.5}
               />
-            </View>
+            </View> */}
 
       <View style={styles.container}>
         {/* header & options kept as-is */}
@@ -197,7 +197,11 @@ export default function StylingResultScreen({ navigation }) {
         </View>
 
         <View style={styles.tittleBar}>
-          <Image source={require("../assets/arrow.png")} style={{ width: 18, height: 18 }} />
+          
+            <Pressable onPress={() => navigation.navigate("WardrobePage")}>
+              <Image source={require("../assets/arrow.png")} style={{width: 18, height: 18}} />
+            </Pressable>
+          
           <View style={[styles.line, { width: 90 }]} />
           <Text style={styles.tittle}>AI Styling</Text>
           <View style={[styles.line, { width: 110 }]} />
@@ -257,6 +261,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14, 
     paddingVertical: 52,
     alignItems:"center",
+    backgroundColor: "#D3CFC0",
   },
 
   weatherBar: { 
